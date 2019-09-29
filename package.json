@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build:lib && npm run build:demo",
+    "build": "npm run build:lib && npm run build:showcase",
     "build:lib": "npm run copy:readme && ng build shw-dynamic-table",
     "build:showcase": "ng build dynamic-table-showcase --base-href='https://01shadowalker01.github.io/shadow-dynamic-table/'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/dynamic-table-showcase",
