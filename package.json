@@ -7,6 +7,7 @@
     "build": "npm run build:lib && npm run build:demo",
     "build:lib": "npm run copy:readme && ng build shw-dynamic-table",
     "build:showcase": "ng build dynamic-table-showcase --base-href='https://01shadowalker01.github.io/shadow-dynamic-table/'",
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/dynamic-table-showcase",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
