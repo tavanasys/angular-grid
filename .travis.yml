@@ -37,8 +37,8 @@ jobs:
       github_token: 8374c9ea-d2e5-454c-90c7-b2708db380bc
       local_dir: dist/dynamic-table-showcase
     if: branch = master
-  - stage: build & publish lib
-    script:
-    - npm run build:lib
-    - npm run publish:lib
-    if: branch = master
+  # - stage: build & publish lib
+  #   script:
+  #   - npm run build:lib
+  #   - npm run publish:lib
+  #   if: branch = master
