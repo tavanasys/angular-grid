@@ -34,7 +34,7 @@ jobs:
     deploy:
       provider: pages
       skip_cleanup: true
-      github_token: d3b1e804b904708d27cfb44f3b322d210aabc679
+      github_token: 0d13a914a23b9b704d5adabc96f53a276982b76a
       local_dir: dist/dynamic-table-showcase
     if: branch = master
   # - stage: build & publish lib
