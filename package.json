@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "copy:readme": "copyfiles ./README.md ./projects/shw-dynamic-table",
     "build": "npm run build:lib && npm run build:showcase",
     "build:lib": "npm run copy:readme && ng build shw-dynamic-table",
     "build:showcase": "ng build dynamic-table-showcase --base-href='https://01shadowalker01.github.io/shadow-dynamic-table/'",
+    "format:check": "prettier --list-different 'projects/**/*.ts'",
+    "format:write": "prettier --write 'projects/**/*.ts'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/dynamic-table-showcase",
     "test": "ng test",
     "test:lib-coverage": "ng test dynamic-table-showcase --code-coverage --watch=false",
@@ -40,6 +43,8 @@
     "@types/node": "~8.9.4",
     "codecov": "^3.6.1",
     "codelyzer": "~4.5.0",
+    "copyfiles": "^2.1.1",
+    "husky": "^3.0.7",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
@@ -47,12 +52,25 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lint-staged": "^7.0.5",
     "ng-packagr": "^4.2.0",
+    "prettier": "^1.18.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "projects/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
