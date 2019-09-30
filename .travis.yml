@@ -29,6 +29,7 @@ jobs:
   #   - npm run report-coverage:lib
   - stage: build & publish showcase
     script:
+    - npm install
     - npm run build:showcase
     deploy:
       provider: pages
