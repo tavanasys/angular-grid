@@ -1,6 +1,6 @@
 {
   "name": "shw-dynamic-table",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,13 +11,17 @@
     "format:check": "prettier --list-different 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
     "publish:demo": "npx angular-cli-ghpages --dir=./dist/dynamic-table-showcase",
+    "adjust-version": "npm-run-all adjust-version:*",
+    "adjust-version:lib": "rjp projects/ng-simple-alert/package.json version $VERSION",
+    "adjust-version:main": "rjp package.json version $VERSION",
     "test": "ng test",
     "test:lib-coverage": "ng test dynamic-table-showcase --code-coverage --watch=false",
     "report-coverage:lib": "cat ./coverage/dynamic-table-showcase/lcov.info | codecov",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "semantic-release": "semantic-release"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
@@ -38,6 +42,7 @@
     "@angular/cli": "~7.3.9",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+    "@semantic-release/exec": "^3.3.7",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -56,6 +61,7 @@
     "ng-packagr": "^4.2.0",
     "prettier": "^1.18.2",
     "protractor": "~5.4.0",
+    "semantic-release": "^15.13.24",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
     "tslib": "^1.9.0",
@@ -72,5 +78,9 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/01shadowalker01/shadow-dynamic-table.git"
   }
 }
