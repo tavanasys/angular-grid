@@ -1,4 +1,4 @@
-(https://img.shields.io/github/issues/01shadowalker01/shadow-dynamic-table)
+![npm version](https://img.shields.io/github/issues/01shadowalker01/shadow-dynamic-table)
 # ShwDynamicTable
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
