@@ -1,6 +1,9 @@
 {
   "name": "shw-dynamic-table",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "description": "Dynamic table for angular to make your life easy :)",
+  "license": "MIT",
+  "repository": "01shadowalker01/shadow-dynamic-table",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
