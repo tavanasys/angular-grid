@@ -1,0 +1,62 @@
+<mat-form-field id="filter-input" *ngIf="tableOptions.hasFilter">
+  <input
+    matInput
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="فیلتر"
+  />
+</mat-form-field>
+
+<ng-container
+  *ngIf="(!loading || !tableOptions.hasLoading) && data.length > 0; else noData"
+>
+  <table mat-table [dataSource]="tableData">
+    <ng-container *ngFor="let headerItem of headers; let i = index">
+      <ng-container [matColumnDef]="headerItem">
+        <th mat-header-cell *matHeaderCellDef>{{ headerItem }}</th>
+        <td
+          mat-cell
+          *matCellDef="let row"
+          [ngStyle]="{
+            'min-width': tableConfig[i].minWidth ? tableConfig[i].minWidth : 0
+          }"
+        >
+          <kmr-cell
+            [row]="row"
+            [rowIndex]="i"
+            [tableOptions]="tableOptions"
+            [tableConfig]="tableConfig"
+            (rowSelected)="rowSelected.emit($event)"
+            (operationHappend)="operationHappend.emit($event)"
+            (dataChanged)="onDataChanged($event, row)"
+          ></kmr-cell>
+        </td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="headers"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: headers"
+      [ngClass]="isRowSelected(row)"
+      (click)="onRowSelect(row)"
+    ></tr>
+  </table>
+
+  <mat-paginator
+    *ngIf="tableOptions.pagination"
+    [length]="data.length"
+    [pageSize]="tableOptions.pageSize"
+    [pageSizeOptions]="tableOptions.pageSizeOptions"
+    (page)="pageChanged.emit($event)"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+</ng-container>
+<ng-template #noData>
+  <table class="mat-table no-data-table">
+    <ng-container *ngFor="let headerItem of headers">
+      <th class="mat-header-cell">{{ headerItem }}</th>
+    </ng-container>
+  </table>
+  <kmr-no-data [loading]="loading || tableOptions.hasLoading"></kmr-no-data>
+</ng-template>

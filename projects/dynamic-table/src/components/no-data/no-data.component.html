@@ -1,0 +1,17 @@
+<ng-container *ngIf="loading; else zeroData">
+  <content-loader height="150">
+    <svg:rect x="15" y="10" rx="0" ry="0" width="375" height="15" />
+    <svg:rect x="15" y="40" rx="0" ry="0" width="375" height="15" />
+    <svg:rect x="15" y="70" rx="0" ry="0" width="375" height="15" />
+    <svg:rect x="15" y="100" rx="0" ry="0" width="375" height="15" />
+    <svg:rect x="15" y="130" rx="0" ry="0" width="375" height="15" />
+  </content-loader>
+</ng-container>
+<ng-template #zeroData>
+  <div class="no-data-message">
+    <i class="material-icons">
+      warning
+    </i>
+    داده ای یافت نشد!
+  </div>
+</ng-template>

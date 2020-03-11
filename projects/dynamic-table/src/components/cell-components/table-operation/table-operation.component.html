@@ -1,0 +1,10 @@
+<button *ngIf="deleteFlag" mat-button (click)="onAction('delete')" color="warn">
+  <mat-icon>delete</mat-icon>
+</button>
+<button *ngIf="editFlag" mat-button (click)="onAction('edit')">
+  <mat-icon>edit</mat-icon>
+</button>
+<button *ngIf="infoFlag" mat-button (click)="onAction('info')" color="primary">
+  <mat-icon>info</mat-icon>
+</button>
+

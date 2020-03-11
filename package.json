@@ -1,86 +1,48 @@
 {
-  "name": "shw-dynamic-table",
-  "version": "0.0.0-development",
+  "name": "dynamic-table",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "copy:readme": "copyfiles ./README.md ./projects/shw-dynamic-table",
-    "build": "npm run build:lib && npm run build:showcase",
-    "build:lib": "npm run copy:readme && ng build shw-dynamic-table",
-    "build:showcase": "ng build dynamic-table-showcase --base-href='https://01shadowalker01.github.io/shadow-dynamic-table/'",
-    "format:check": "prettier --list-different 'projects/**/*.ts'",
-    "format:write": "prettier --write 'projects/**/*.ts'",
-    "publish:demo": "npx angular-cli-ghpages --dir=./dist/dynamic-table-showcase",
-    "adjust-version": "npm-run-all adjust-version:*",
-    "adjust-version:lib": "rjp projects/ng-simple-alert/package.json version $VERSION",
-    "adjust-version:main": "rjp package.json version $VERSION",
+    "build": "ng build",
     "test": "ng test",
-    "test:lib-coverage": "ng test dynamic-table-showcase --code-coverage --watch=false",
-    "report-coverage:lib": "cat ./coverage/dynamic-table-showcase/lcov.info | codecov",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "semantic-release": "semantic-release"
+    "e2e": "ng e2e"
   },
-  "private": false,
+  "private": true,
   "dependencies": {
-    "@angular/animations": "~7.2.0",
-    "@angular/common": "~7.2.0",
-    "@angular/compiler": "~7.2.0",
-    "@angular/core": "~7.2.0",
-    "@angular/forms": "~7.2.0",
-    "@angular/platform-browser": "~7.2.0",
-    "@angular/platform-browser-dynamic": "~7.2.0",
-    "@angular/router": "~7.2.0",
-    "core-js": "^2.5.4",
-    "rxjs": "~6.3.3",
-    "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "@angular/animations": "~8.2.14",
+    "@angular/common": "~8.2.14",
+    "@angular/compiler": "~8.2.14",
+    "@angular/core": "~8.2.14",
+    "@angular/forms": "~8.2.14",
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/router": "~8.2.14",
+    "@compodoc/compodoc": "^1.1.11",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.0",
-    "@angular-devkit/build-ng-packagr": "~0.13.0",
-    "@angular/cli": "~7.3.9",
-    "@angular/compiler-cli": "~7.2.0",
-    "@angular/language-service": "~7.2.0",
-    "@semantic-release/exec": "^3.3.7",
-    "@types/jasmine": "~2.8.8",
-    "@types/jasminewd2": "~2.0.3",
+    "@angular-devkit/build-angular": "~0.803.25",
+    "@angular/cli": "~8.3.21",
+    "@angular/compiler-cli": "~8.2.14",
+    "@angular/language-service": "~8.2.14",
     "@types/node": "~8.9.4",
-    "codecov": "^3.6.1",
-    "codelyzer": "~4.5.0",
-    "copyfiles": "^2.1.1",
-    "husky": "^3.0.7",
-    "jasmine-core": "~2.99.1",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "^5.0.0",
+    "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.0.0",
+    "karma": "~4.1.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
-    "karma-jasmine": "~1.1.2",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "lint-staged": "^7.0.5",
-    "ng-packagr": "^4.2.0",
-    "prettier": "^1.18.2",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "~5.4.0",
-    "semantic-release": "^15.13.24",
     "ts-node": "~7.0.0",
-    "tsickle": ">=0.34.0",
-    "tslib": "^1.9.0",
-    "tslint": "~5.11.0",
-    "typescript": "~3.2.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "projects/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/01shadowalker01/shadow-dynamic-table.git"
+    "tslint": "~5.15.0",
+    "typescript": "~3.5.3"
   }
 }

@@ -1,0 +1,54 @@
+<ng-container *ngIf="config.customComponent">
+  <ng-container [ngSwitch]="config.customComponent">
+    <ng-container *ngSwitchCase="'row-selection'">
+      <kmr-row-selection
+        [index]="data"
+        (rowSelected)="rowSelected.emit($event)"
+      ></kmr-row-selection>
+    </ng-container>
+    <ng-container *ngSwitchCase="'delete'">
+      <kmr-table-operation
+        (operationHappend)="this.operationHappend.emit($event)"
+        [row]="data"
+        [type]="'delete'"
+      ></kmr-table-operation>
+    </ng-container>
+    <ng-container *ngSwitchCase="'edit'">
+      <kmr-table-operation
+        (operationHappend)="this.operationHappend.emit($event)"
+        [row]="data"
+        [type]="'edit'"
+      ></kmr-table-operation>
+    </ng-container>
+    <ng-container *ngSwitchCase="'info'">
+      <kmr-table-operation
+        (operationHappend)="this.operationHappend.emit($event)"
+        [row]="data"
+        [type]="'info'"
+      ></kmr-table-operation>
+    </ng-container>
+    <ng-container *ngSwitchCase="'edit-delete'">
+      <kmr-table-operation
+        (operationHappend)="this.operationHappend.emit($event)"
+        [row]="data"
+        [type]="'edit-delete'"
+      ></kmr-table-operation>
+    </ng-container>
+    <ng-container *ngSwitchCase="'edit-delete-info'">
+      <kmr-table-operation
+        (operationHappend)="this.operationHappend.emit($event)"
+        [row]="data"
+        [type]="'edit-delete-info'"
+      ></kmr-table-operation>
+    </ng-container>
+    <ng-container *ngSwitchCase="'image-cell'">
+      <kmr-image-cell [imageUrl]="data"></kmr-image-cell>
+    </ng-container>
+    <ng-container *ngSwitchCase="'increase-decrease'">
+      <kmr-increase-decrease
+        [product]="data"
+        (operationHappened)="this.operationHappend.emit($event)"
+      ></kmr-increase-decrease>
+    </ng-container>
+  </ng-container>
+</ng-container>

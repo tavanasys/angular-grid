@@ -1,0 +1,25 @@
+<div class="dynamic-cell" (dblclick)="onEditMode()">
+  <ng-container *ngIf="!editMode; else notEditMode">
+    <!-- showing value of model when edit mode is OFF -->
+    {{ currentModel[currentFields[0].key] }}
+  </ng-container>
+  <ng-template #notEditMode>
+    <!-- enabling the user to edit fields when edit mode is ON -->
+    <form [formGroup]="form" class="box-content" (ngSubmit)="onSubmit()">
+      <formly-form
+        [model]="currentModel"
+        [fields]="currentFields"
+        [options]="options"
+        [form]="form"
+      ></formly-form>
+      <button
+        class="confirm-btn"
+        type="submit"
+        mat-mini-fab
+        [disabled]="!form.valid"
+      >
+        <i class="material-icons">check</i>
+      </button>
+    </form>
+  </ng-template>
+</div>

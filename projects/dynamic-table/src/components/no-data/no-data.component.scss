@@ -1,0 +1,17 @@
+.no-data-message {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: white;
+  background-color: #ff5252;
+  width: 30%;
+  padding: 0.4rem;
+  border-radius: 3px;
+
+  .material-icons {
+    margin-left: 0.4rem;
+    color: white;
+  }
+}

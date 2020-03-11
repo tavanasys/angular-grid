@@ -1,0 +1,25 @@
+<span class="count-button-box">
+  <button
+    mat-button
+    class="count-button decrease-button"
+    (click)="onDecreaseValue(productCountInput.value)"
+  >
+    -
+  </button>
+  <input
+    #productCountInput
+    type="number"
+    class="number"
+    max="10000"
+    min="1"
+    [(value)]="product.count"
+    (change)="onInputChange(productCountInput.value)"
+  />
+  <button
+    mat-button
+    class="count-button increase-button"
+    (click)="onIncreaseValue(productCountInput.value)"
+  >
+    +
+  </button>
+</span>

@@ -1,0 +1,79 @@
+.count-button {
+  display: inline-block;
+  background: #eee;
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px 0;
+  margin-top: 1px;
+}
+
+.count-button:hover {
+  cursor: pointer;
+}
+
+.mat-button {
+  min-width: unset;
+}
+
+input.number {
+  text-align: center;
+  border-right: none !important;
+  border-left: none !important;
+  margin: 0px;
+  width: 8rem;
+  height: 2.98rem;
+  z-index: 0;
+}
+
+.decrease-button {
+  margin-right: -0.25rem;
+  width: 2.5rem;
+  height: 3rem;
+  padding: 0;
+  z-index: 10;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.increase-button {
+  margin-left: -0.25rem;
+  width: 2.5rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.count-button-box {
+  display: inline-block;
+  margin-right: 0.8rem;
+  margin-left: 0.5rem;
+  direction: ltr;
+  * {
+    border: 0.5px solid gray !important;
+  }
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.count-button-box {
+  display: flex !important;
+}
+
+.count-button {
+  margin: 0 !important;
+}
+
+.count-button-box * {
+  display: grid !important;
+}
+
+.increase-button {
+  background-color: rgb(212, 212, 216) !important;
+}
+
+.decrease-button {
+  background-color: rgb(212, 212, 216) !important;
+}

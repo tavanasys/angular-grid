@@ -1,0 +1,26 @@
+<ng-container
+  *ngIf="tableConfig[rowIndex].customComponent == undefined; else isCustom"
+>
+  <ng-container *ngIf="tableOptions.inlineEdit || tableConfig[rowIndex].inlineEdit; else elseTemplate">
+    <kmr-dynamic-cell
+      [model]="getModel(row, rowIndex)"
+      [rowIndex]="rowIndex"
+      [fields]="getFields(row, rowIndex)"
+      (dataChanged)="dataChanged.emit($event)"
+    ></kmr-dynamic-cell>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <!-- if inlineEdit was not active, -->
+    <!-- get the model of this row with help of getModel() method, -->
+    <!-- and extract current cell with help of getFields() method. -->
+    {{ getModel(row, rowIndex)[getFields(row, rowIndex)[0].key] }}
+  </ng-template>
+</ng-container>
+<ng-template #isCustom>
+  <kmr-custom-renderer
+    (operationHappend)="operationHappend.emit($event)"
+    [config]="tableConfig[rowIndex]"
+    [data]="row[tableConfig[rowIndex].fieldName]"
+    (rowSelected)="rowSelected.emit($event)"
+  ></kmr-custom-renderer>
+</ng-template>
