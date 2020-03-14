@@ -1,13 +1,11 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import {
-  MatTableModule,
-  MatPaginatorModule,
-  MatCheckboxModule,
-  MatIconModule,
-  MatButtonModule,
-  MatInputModule
-} from "@angular/material";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { FormlyModule } from "@ngx-formly/core";

@@ -1,6 +1,7 @@
 {
-  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/@someorgname/dynamic-table",
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/@ng-hive/dynamic-table",
+  "whitelistedNonPeerDependencies": ["."],
   "lib": {
     "entryFile": "index.ts"
   }

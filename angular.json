@@ -28,6 +28,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +94,7 @@
               "projects/demo/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +126,42 @@
           }
         }
       }
-    }},
+    },
+    "dynamic-table": {
+      "projectType": "library",
+      "root": "projects/dynamic-table",
+      "sourceRoot": "projects/dynamic-table/src",
+      "prefix": "ngh",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dynamic-table/tsconfig.lib.json",
+            "project": "projects/dynamic-table/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dynamic-table/src/test.ts",
+            "tsConfig": "projects/dynamic-table/tsconfig.spec.json",
+            "karmaConfig": "projects/dynamic-table/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dynamic-table/tsconfig.lib.json",
+              "projects/dynamic-table/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "demo"
 }

@@ -8,7 +8,8 @@ import {
   ViewChild,
   ChangeDetectionStrategy
 } from "@angular/core";
-import { MatTableDataSource, MatPaginator } from "@angular/material";
+import { MatTableDataSource } from "@angular/material/table";
+import { MatPaginator } from "@angular/material/paginator";
 import { TableCellConfig } from "../../shared/models/table-config";
 import { TableOptions } from "../../shared/models/table-options";
 import { DynamicTableService } from "../../shared/services/dynamic-table.service";
